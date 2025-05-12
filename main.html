@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>ShopCart</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search products...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart <span id="cart-count">0</span></a>
+            <a href="#wishlist">Wishlist <span id="wishlist-count">0</span></a>
+            <a href="#account" id="account-link">Login</a>
+        </div>
+    </nav>
+
+    <!-- Category Navigation -->
+    <div class="category-nav">
+        <div class="category-list">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="electronics">Electronics</button>
+            <button class="category-btn" data-category="clothing">Clothing</button>
+            <button class="category-btn" data-category="books">Books</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to ShopCart</h2>
+            <p>Your one-stop destination for all your shopping needs</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section -->
+    <section id="admin-dashboard" class="admin-dashboard" style="display: none;">
+        <h2>Admin Dashboard</h2>
+        <div class="admin-grid">
+            <div class="admin-card">
+                <h3>Product Management</h3>
+                <button onclick="viewProducts()">View Products</button>
+                <button onclick="addProduct()">Add Product</button>
+                <button onclick="removeProduct()">Remove Product</button>
+                <button onclick="updateProduct()">Update Product</button>
+            </div>
+            <div class="admin-card">
+                <h3>Order Management</h3>
+                <button onclick="viewOrders()">View All Orders</button>
+                <button onclick="viewShippedOrders()">View Shipped Orders</button>
+                <button onclick="viewUnshippedOrders()">View Unshipped Orders</button>
+            </div>
+            <div class="admin-card">
+                <h3>Stock Management</h3>
+                <button onclick="viewStock()">View Stock</button>
+                <button onclick="updateStock()">Update Stock</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: ₹<span id="cart-total">0.00</span></h3>
+                <button id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlist-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Wishlist</h2>
+            <div id="wishlist-items"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="userrole">Login As</label>
+                    <select name="usertype" id="userrole" class="form-control" required>
+                        <option value="customer" selected>CUSTOMER</option>
+                        <option value="admin">ADMIN</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-usertype">Register As</label>
+                    <select id="reg-usertype" required>
+                        <option value="customer" selected>CUSTOMER</option>
+                        <option value="admin">ADMIN</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reg-name">Name</label>
+                    <input type="text" id="reg-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-address">Address</label>
+                    <textarea id="reg-address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reg-mobile">Mobile</label>
+                    <input type="tel" id="reg-mobile" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
