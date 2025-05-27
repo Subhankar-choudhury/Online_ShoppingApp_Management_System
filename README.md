@@ -87,9 +87,6 @@ DB_USER=root
 DB_PASSWORD=yourpassword
 DB_NAME=shoppingdb
 ```
-
-> ✅ Make sure `.env` is included in `.gitignore`
-
 #### Sample `.gitignore`
 ```
 node_modules/
