@@ -12,8 +12,7 @@ The **Shopping App Management System (SAMS)** enables customers to browse produc
 Built with:
 - **Frontend**: HTML, CSS, JavaScript  
 - **Backend**: Node.js, Express  
-- **Database**: MySQL (normalized to BCNF)
-
+- **Database**: MySQL 
 ---
 
 ## ✨ Key Features
