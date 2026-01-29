@@ -173,7 +173,7 @@ Pull requests are welcome! For major changes, open an issue first to discuss wha
 ## 👨‍💻 Maintainer
 
 **Subhankar Choudhury**  
-📧 [dazai00choudhury@gmail.com](mailto:dazai00choudhury@gmail.com)
+📧 [subhankarchoudhury12@gmail.com](mailto:subhankarchoudhury12@gmail.com)
 
 ---
 
